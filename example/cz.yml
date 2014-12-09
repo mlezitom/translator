@@ -1,0 +1,15 @@
+# comment
+menu: 
+    placeholders: You can also use placeholders like %d this.
+    language:
+        cz: "Cze"
+        en: "Eng"
+    submenu:
+        facebook: Facebook
+        youtube: YouTube
+        twitter: Twitter
+        instagram: Instagram
+    search: Hledat
+footer:
+    item2: Text
+    item3: Asdf tzui
