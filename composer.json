@@ -1,7 +1,7 @@
 {
     "name": "mlezitom/translator",
     "type": "library",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Translator",
     "homepage": "https://github.com/mlezitom/translator",
     "license": [
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "nette/utils": "2.3.*",
-        "mustangostang/spyc": "0.5.*"
+        "nette/utils": "^2.4",
+        "mustangostang/spyc": "^0.6"
     }
 }
