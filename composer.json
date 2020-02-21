@@ -5,7 +5,7 @@
     "description": "Translator",
     "homepage": "https://github.com/mlezitom/translator",
     "license": [
-      "GPL-3.0"
+      "GPL-3.0-or-later"
     ],
     "authors": [
         {
