@@ -17,19 +17,26 @@ class Translator implements \Nette\Localization\ITranslator {
 			require_once(dirname(__FILE__) . '/spyc.php');
 		}
     }
-    
-    public function translate($message, $count = NULL) {
-        if(array_key_exists($message, $this->data)) {
-            $translation = $this->data[$message];
-        }
-        else {
-            $translation = $message;
-        } 
-        
-        $params = func_get_args();
-		$params[0] = $translation;
-        return ($count) ? call_user_func_array("sprintf", $params ) : $translation;
-    }
+
+	public function translate($message, ...$parameters): string
+	{
+		if(array_key_exists($message, $this->data)) {
+			$translation = $this->data[$message];
+		}
+		else {
+			$translation = $message;
+		}
+
+		if(!count($parameters)) {
+			return (string)$translation;
+		}
+
+		$sprintfParams = [$translation];
+		foreach($parameters as $parameter) {
+			$sprintfParams[] = $parameter;
+		}
+		return call_user_func_array("sprintf", $sprintfParams);
+	}
     
     public function loadFile($filename) {
         if(!is_file($filename)) {
